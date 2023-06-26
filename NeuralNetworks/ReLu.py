@@ -10,16 +10,17 @@ class ReLu:
     def print_w_b(self):
         data_frame = pd.DataFrame({'Inputs': self.input_nn, 'Weights': self.weight, 'Bias': self.bias}, index=['First Input', 'Second Input', 'Third Input', 'Forth Input'])
         return data_frame
+    
     def predict(self):
         
-        y = 0
+        y = []
 
         #Calculate w*xn + b
         for i in range(len(self.input_nn)):
-            y += self.input_nn[i] * self.weight[i] + self.bias
+            y.append(self.input_nn[i] * self.weight[i] + self.bias)
         
         # Use a ReLu activation
-        return max(0, y)
+        return max(0, sum(y))
     
 
 
