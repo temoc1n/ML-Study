@@ -1,4 +1,4 @@
 # ML Studies Repository
 
-## Yes, I am studying ML by myself...
-<p> I didn't had the chance to go to University yet so I guess I will start by putting everything new I learn in this rep :))</p>
+## So I decided to start studying ML
+<p> I didn't had the chance to go to University yet but I have been very excited about this theme so maybe one day this rep will be worth something :)</p>
