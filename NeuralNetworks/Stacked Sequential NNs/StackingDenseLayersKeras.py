@@ -11,7 +11,7 @@ model = Sequential([
     layers.Dense(units=1), # Output Layer
 ])
 
-X = np.random.rand(10, 11)
+X = np.random.rand(1, 11)
 
 Y = model.predict(X)
 

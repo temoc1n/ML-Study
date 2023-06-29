@@ -1,7 +1,6 @@
 #ANN nonelinear with stacked dense layers
 
 import numpy as np
-import pandas as pd
 
 class ANN:
     def __init__(self, inputs, layers=2, units=[4,3]):
