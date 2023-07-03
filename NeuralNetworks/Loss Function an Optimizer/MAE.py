@@ -9,7 +9,8 @@ import os
 import time
 
 class ANN:
-    def __init__(self, inputs, hidden_layers=3, units=[4,6,3], training_cycle=10, target=102):
+
+    def __init__(self, inputs, hidden_layers=1, units=[1], training_cycle=10, target=102):
         if(hidden_layers != len(units)):
             raise ValueError('Numbers of Units does not match Hidden Layers')
         self.hidden_layers = hidden_layers
@@ -45,10 +46,13 @@ class ANN:
                 self.inputs = Units
                 Layers.append(Units)
                 Units = []
-            
 
             Training_cycle.append(abs(self.target - (sum(Layers[-1]) + Bias)))
             Y = []
+
+            if Training_cycle[-1] == self.target:
+                break
+
             if Training_cycle[-1] > self.target:
                 W -= 0.6
                 B -= 0.1
@@ -64,6 +68,7 @@ class ANN:
 
 
 if __name__ == '__main__':
-    inputs = np.round(np.random.rand(3) * 8)
-    neural_network = ANN(inputs=inputs)
+    #inputs = np.round(np.random.rand(3) * 8)
+    inputs = [1.23, 1.33, 0.87]
+    neural_network = ANN(inputs=inputs, hidden_layers=4, units=[6,4,4,3], training_cycle=10, target=102)
     neural_network.predict()
